@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comig Soon Page </title>
+    <link rel="stylesheet" href="CS.css">
+</head>
+
+<body>
+
+    <div class="hero">
+        <nav>
+            <img src="Images/logo.jpg" class="logo">
+        </nav>
+        <div class="content">
+            <h1>Our Website is <span> coming soon </span></h1>
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <input type="email" id="email" placeholder="Email id" required>
+                <button type="submit" class="btn">send</button>
+            </form>
+        </div>
+        <div class="links">
+            <a href="https://instagram.com/beyondvision.designs?igshid=MzRlODBiNWFlZA=="><img
+                    src="Images/instagram.png"></a>
+            <a href=""><img src="Images/telegram.png"></a>
+            <a href=""><img src="Images/pinterest.png"></a>
+            <a href=""><img src="Images/dribble.png"></a>
+        </div>
+
+    </div>
+    <script src=" https://smtpjs.com/v3/smtp.js">
+    </script>
+
+    <script>
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "j.rushikesh7687@gmail.com",
+                Password: "250BB25BB8825C330A0E40C341E4D13B6E63",
+                To: 'j.rushikesh7687@gmail.com',
+                From: document.getElementById("email").value,
+                Subject: "New Contact Form Enquiry",
+                Body: "Email: " + document.getElementById("email").value
+            }).then(
+                message => alert(Message)
+            );
+
+        }
+    </script>
+
+</body>
+
+</html>
